@@ -26,7 +26,7 @@ var_names <- c('Miles per Gallon', 'No. of Cylinders','Displacement',
 
 var_table <- tibble(Var_names=abbrs, Meanings = var_names)
 names(var_names) <- abbrs
-# Define UI for application that draws a histogram
+
 ui <- fluidPage(
 
     # Application title
@@ -38,7 +38,7 @@ ui <- fluidPage(
       
     p("The plotly is a ggplotly plot so it is interactive."),
 
-    # Sidebar with a slider input for number of bins 
+    
     sidebarLayout(
         sidebarPanel(
         selectInput('X_Var', 'Select X Variable',
@@ -85,7 +85,7 @@ ui <- fluidPage(
     )
 )
 
-# Define server logic required to draw a histogram
+
 server <- function(input, output) {
     x_var <- reactive(input$X_Var)
     y_var <- reactive(input$Y_Var)
